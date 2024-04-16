@@ -12,14 +12,22 @@
 // console.log(`${header}`);
 // console.log(`${row1}`);
 
-const id = [42, 57, 63, 98];
-const called = ["Bruce", "Bob", "Blaine", "Bill"];
-const occupation = ["Knight", "Fry Cook", "Quiz Master", "Doctor's Assistant"];
-const age = [41, 19, 58, 26];
+const ids = [42, 57, 63, 98];
+const names = ["Bruce", "Bob", "Blaine", "Bill"];
+const occupations = ["Knight", "Fry Cook", "Quiz Master", "Doctor's Assistant"];
+const ages = [41, 19, 58, 26];
 
 console.log("ID" + " " + "Name" + " " + "Occupation" + " " + "Age");
 for (let k = 0; k < id.length; k++) {
-  console.log(id[k] + " " + called[k] + " " + occupation[k] + " " + age[k]);
+  console.log(ids[k] + " " + names[k] + " " + occupations[k] + " " + ages[k]);
 }
 
 // Part 2: Expanding Functionality
+
+// for (const i = 0; i < 1000; i++) {
+//   const row = [];
+//   for (const j = 0; j < 1000; j++) {
+//     row.push([j][i]);
+//   }
+//   data.addRow(row);
+// }
