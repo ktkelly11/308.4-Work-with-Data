@@ -1,18 +1,21 @@
 // Part 1: Refactoring Old Code
 
-// Attempt 1 - Wouldn't work because the typeof in the arrays is not the same data type
-// const header = ["ID", "Name", "Occupation", "Age"];
-// const row1 = ["42", "Bruce", "Knight", "41"];
-// const row2 = ["57", "Bob", "Fry Cook", "19"];
-// const row3 = ["63", "Blaine", "Quiz Master", "58"];
-// const row4 = ["98", "Bill", "Doctor's Assistant", "26"];
+// Attempt 1 // Rodney pointed out that I could have different data types in an array
+const header = ["ID", "Name", "Occupation", "Age"];
+const row1 = [42, "Bruce", "Knight", 41];
+const row2 = [57, "Bob", "Fry Cook", 19];
+const row3 = [63, "Blaine", "Quiz Master", 58];
+const row4 = [98, "Bill", "Doctor's Assistant", 26];
 
 // let lines = [];
 // let cells = [" "];
 // console.log(`${header}`);
 // console.log(`${row1}`);
 
-// Attempt 2 - works
+const wholeTable = [header, row1, row2, row3, row4];
+console.log(wholeTable); // works in an array
+
+// Attempt 2
 const headers = ["ID", "Name", "Occupation", "Age"];
 const ids = [42, 57, 63, 98];
 const names = ["Bruce", "Bob", "Blaine", "Bill"];
@@ -23,11 +26,11 @@ const ages = [41, 19, 58, 26];
 
 console.log(`${headers[0]} ${headers[1]} ${headers[2]} ${headers[3]}`);
 
-for (let k = 0; k < ids.length; k++) {
+for (let k = 0; k < headers.length; k++) {
   console.log(ids[k] + " " + names[k] + " " + occupations[k] + " " + ages[k]);
 }
 
-// Attempt 3 - also works
+// Attempt 3
 const Headers = ["ID", "Name", "Occupation", "Age"];
 const IDs = ["42", "57", "63", "98"];
 const Names = ["Bruce", "Bob", "Blaine", "Bill"];
@@ -50,49 +53,20 @@ for (let j = 0; j < Headers.length; j++) {
 }
 
 // Part 2: Expanding Functionality
+const csvStr =
+  "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 
-// for (const i = 0; i < 1000; i++) {
-//   const row = [];
-//   for (const j = 0; j < 1000; j++) {
-//     row.push([j][i]);
-//   }
-//   data.addRow(row);
-// }
+let infiniteColumns = [" "];
+let cells = "";
+lines = csvStr.split("\n");
 
-// // let cell1 = "";
-// let cell2 = "";
-// let cell3 = "";
-// let cell4 = "";
-// let cell = 1;
-// // let row = 1
-// for (let i = 0; i < csvStr.length; i++) {
-//   if (csvStr[i] === ",") {
-//     cell++;
-//     continue;
-//   }
-//   if (csvStr[i] === "\n") {
-//     cell = 1;
-//     cell1 = "";
-//     cell2 = "";
-//     cell3 = "";
-//     cell4 = "";
-//     continue;
-//   }
-//   switch (cell) {
-//     case 1:
-//       cell1 += csvStr[i];
-//       break;
-//     case 2:
-//       cell2 += csvStr[i];
-//       break;
-//     case 3:
-//       cell3 += csvStr[i];
-//       break;
-//     case 4:
-//       cell4 += csvStr[i];
-//       break;
-//   }
-//   if ((cell === 4 && csvStr[i + 1] === "\n") || i + 1 === csvStr.length) {
-//     console.log(cell1, cell2, cell3, cell4);
-//   }
-// }
+let newArray = [
+  ["ID", "Name", "Occupation", "Age"],
+  ["42", "57", "63", "98"],
+  ["Bruce", "Bob", "Blaine", "Bill"],
+  ["Knight", "Fry cook", "Quiz Master", "Doctor's Assistant"],
+  ["41", "19", "58", "26"],
+];
+console.log(newArray[(0, 3)]);
+
+// Part 3: Transforming Data
