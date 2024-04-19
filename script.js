@@ -53,20 +53,57 @@ for (let j = 0; j < Headers.length; j++) {
 }
 
 // Part 2: Expanding Functionality
+
 const csvStr =
   "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 
-let infiniteColumns = [" "];
-let cells = "";
-lines = csvStr.split("\n");
+// let infiniteColumns = [" "];
+// let cells = "";
+// lines = csvStr.split("\n");
 
-let newArray = [
-  ["ID", "Name", "Occupation", "Age"],
-  ["42", "57", "63", "98"],
-  ["Bruce", "Bob", "Blaine", "Bill"],
-  ["Knight", "Fry cook", "Quiz Master", "Doctor's Assistant"],
-  ["41", "19", "58", "26"],
-];
-console.log(newArray[(0, 3)]);
+// let newArray = [
+//   ["ID", "Name", "Occupation", "Age"],
+//   ["42", "57", "63", "98"],
+//   ["Bruce", "Bob", "Blaine", "Bill"],
+//   ["Knight", "Fry cook", "Quiz Master", "Doctor's Assistant"],
+//   ["41", "19", "58", "26"],
+// ];
+// console.log(newArray[(0, 3)]);
+
+// const header = ["ID", "Name", "Occupation", "Age"];
+// const row1 = [42, "Bruce", "Knight", 41];
+// const row2 = [57, "Bob", "Fry Cook", 19];
+// const row3 = [63, "Blaine", "Quiz Master", 58];
+// const row4 = [98, "Bill", "Doctor's Assistant", 26];
+
+// Describe a variable that stores the number of columns in each row of data within the CSV
+const headerS = ["ID", "Name", "Occupation", "Age"];
+const rowOne = [42, "Bruce", "Knight", 41];
+const rowTwo = [57, "Bob", "Fry Cook", 19];
+const rowThree = [63, "Blaine", "Quiz Master", 58];
+const rowFour = [98, "Bill", "Doctor's Assistant", 26];
+
+const infiniteColumns = [headerS.length];
+
+const table = [headerS, rowOne, rowTwo, rowThree, rowFour];
+console.log(wholeTable);
+
+for (let m = 0; m < headerS.length; m++) {
+  if (headerS[m] === ",") {
+    infiniteColumns++;
+  }
+  if (headerS[m] === "\n") {
+    rowOne = "";
+    rowTwo = "";
+    rowThree = "";
+    rowFour = "";
+  }
+}
 
 // Part 3: Transforming Data
+
+// Use arrays to store ordered lists of data.
+// Use objects to store keyed lists of data.
+// Use conditional logic to process data.
+// Use loops to handle repetitive tasks.
+// Transform data according to specifications.
