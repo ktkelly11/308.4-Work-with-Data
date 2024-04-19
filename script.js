@@ -68,6 +68,13 @@ cells = csvStr.split(",");
 
 infiniteColumns = cells.length;
 
+for (i = 0; i < lines.length; i++) {
+  if (cells.length > infiniteColumns) {
+    cells.length = infiniteColumns;
+  }
+}
+
+console.log("${infiniteColumns}");
 // let infiniteColumns = [" "];
 // let cells = "";
 // lines = csvStr.split("\n");
