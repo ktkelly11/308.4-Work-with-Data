@@ -26,8 +26,8 @@ const ages = [41, 19, 58, 26];
 
 console.log(`${headers[0]} ${headers[1]} ${headers[2]} ${headers[3]}`);
 
-for (let k = 0; k < headers.length; k++) {
-  console.log(ids[k] + " " + names[k] + " " + occupations[k] + " " + ages[k]);
+for (let i = 0; i < headers.length; i++) {
+  console.log(ids[i] + " " + names[i] + " " + occupations[i] + " " + ages[i]);
 }
 
 // Attempt 3
@@ -47,15 +47,26 @@ console.log(`${Headers[0]} ${Headers[1]} ${Headers[2]} ${Headers[3]}`);
 //   console.log(Headers[j]);
 // } // did not work
 
-for (let j = 0; j < Headers.length; j++) {
-  Headers[j] = IDs[j] + " " + Names[j] + " " + Occupations[j] + " " + Ages[j];
-  console.log(Headers[j]);
+for (let i = 0; i < Headers.length; i++) {
+  Headers[i] = IDs[i] + " " + Names[i] + " " + Occupations[i] + " " + Ages[i];
+  console.log(Headers[i]);
 }
 
+console.log("=========================================");
 // Part 2: Expanding Functionality
 
 const csvStr =
   "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
+
+lines = [];
+cells = [];
+
+let infiniteColumns;
+
+lines = csvStr.split("\n");
+cells = csvStr.split(",");
+
+infiniteColumns = cells.length;
 
 // let infiniteColumns = [" "];
 // let cells = "";
@@ -77,28 +88,28 @@ const csvStr =
 // const row4 = [98, "Bill", "Doctor's Assistant", 26];
 
 // Describe a variable that stores the number of columns in each row of data within the CSV
-const headerS = ["ID", "Name", "Occupation", "Age"];
-const rowOne = [42, "Bruce", "Knight", 41];
-const rowTwo = [57, "Bob", "Fry Cook", 19];
-const rowThree = [63, "Blaine", "Quiz Master", 58];
-const rowFour = [98, "Bill", "Doctor's Assistant", 26];
+// const headerS = ["ID", "Name", "Occupation", "Age"];
+// const rowOne = [42, "Bruce", "Knight", 41];
+// const rowTwo = [57, "Bob", "Fry Cook", 19];
+// const rowThree = [63, "Blaine", "Quiz Master", 58];
+// const rowFour = [98, "Bill", "Doctor's Assistant", 26];
 
-const infiniteColumns = [headerS.length];
+// const infiniteColumns = [headerS.length];
 
-const table = [headerS, rowOne, rowTwo, rowThree, rowFour];
-console.log(wholeTable);
+// const table = [headerS, rowOne, rowTwo, rowThree, rowFour];
+// console.log(wholeTable);
 
-for (let m = 0; m < headerS.length; m++) {
-  if (headerS[m] === ",") {
-    infiniteColumns++;
-  }
-  if (headerS[m] === "\n") {
-    rowOne = "";
-    rowTwo = "";
-    rowThree = "";
-    rowFour = "";
-  }
-}
+// for (let m = 0; m < headerS.length; m++) {
+//   if (headerS[m] === ",") {
+//     infiniteColumns++;
+//   }
+//   if (headerS[m] === "\n") {
+//     rowOne = "";
+//     rowTwo = "";
+//     rowThree = "";
+//     rowFour = "";
+//   }
+// }
 
 // Part 3: Transforming Data
 
