@@ -125,10 +125,20 @@ for (i = 0; i < lines.length; i++) {
 console.log(newArray);
 console.log(`newArray: ${infiniteColumns}`); // returned newArray: 16
 
+console.log("=========================================");
 // Part 3: Transforming Data
 let columnHeaders = newArray[0];
 
-let objectArray = {};
+let objectArray = [];
+
+for (i = 1; i < newArray.length; i++) {
+  objectArray[i - 1] = {};
+  for (h = 0; h < newArray.length - 1; h++) {
+    objectArray[i - 1][columnHeaders[h].toLowerCase()] = newArray[i][h];
+  }
+}
+
+console.log(objectArray);
 
 // let object = {};
 // object[newArray[0]] = newArray[1];
@@ -152,11 +162,10 @@ let objectArray = {};
 // newerArray[columnHeaders[0]] = newArray[1];
 // console.log(newerArray);
 
-// for (i = 1; i < newArray.length; i++) {
-//   objectArray[i - 1];
-//   for (h = 0; h < infiniteColumns; h++) {
-//     objectArray[i - 1][columnHeaders[h]] = newArray[i][h];
-//   }
-// }
+console.log("=========================================");
+// Part 4
 
-// console.log(objectArray); //is returning undefined
+// Remove the last element from the sorted index
+objectArray.pop(1);
+console.log(objectArray);
+// got rid of the 4th array (98, Bill, Doctor's Assistant, 26)
