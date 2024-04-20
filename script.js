@@ -55,26 +55,7 @@ for (let i = 0; i < Headers.length; i++) {
 console.log("=========================================");
 // Part 2: Expanding Functionality
 
-const csvStr =
-  "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
-
-lines = [];
-cells = [];
-
-let infiniteColumns;
-
-lines = csvStr.split("\n");
-cells = csvStr.split(",");
-
-infiniteColumns = cells.length;
-
-for (i = 0; i < lines.length; i++) {
-  if (cells.length > infiniteColumns) {
-    cells.length = infiniteColumns;
-  }
-}
-
-console.log("${infiniteColumns}");
+// Trying to make sense of it
 // let infiniteColumns = [" "];
 // let cells = "";
 // lines = csvStr.split("\n");
@@ -118,10 +99,64 @@ console.log("${infiniteColumns}");
 //   }
 // }
 
-// Part 3: Transforming Data
+const csvStr =
+  "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
 
-// Use arrays to store ordered lists of data.
-// Use objects to store keyed lists of data.
-// Use conditional logic to process data.
-// Use loops to handle repetitive tasks.
-// Transform data according to specifications.
+lines = [];
+cells = [];
+
+let infiniteColumns;
+
+lines = csvStr.split("\n"); // split csv lines
+cells = csvStr.split(","); // split into cells
+
+infiniteColumns = cells.length;
+
+newArray = [];
+
+for (i = 0; i < lines.length; i++) {
+  cells = lines[i].split(",");
+  if (cells.length > infiniteColumns) {
+    cells.length = infiniteColumns;
+  }
+  newArray.push(cells);
+}
+
+console.log(newArray);
+console.log(`newArray: ${infiniteColumns}`); // returned newArray: 16
+
+// Part 3: Transforming Data
+let columnHeaders = newArray[0];
+
+let objectArray = {};
+
+// let object = {};
+// object[newArray[0]] = newArray[1];
+// console.log(object);
+
+// let keys = Object.keys(obj);
+// let val = Object.values(obj)
+// // console.log(keys);
+// let array = ["a", "b", "c", "d"];
+// let o = {};
+// o[array[0]] = array[1];
+// console.log(o);
+// {a: 'b'}
+
+// stackoverflow example
+// const result = {};
+// for (let index = 0; index < array1.length; ++index) {
+//   result[array1[index]] = array2[index];
+// }
+
+// newerArray[columnHeaders[0]] = newArray[1];
+// console.log(newerArray);
+
+// for (i = 1; i < newArray.length; i++) {
+//   objectArray[i - 1];
+//   for (h = 0; h < infiniteColumns; h++) {
+//     objectArray[i - 1][columnHeaders[h]] = newArray[i][h];
+//   }
+// }
+
+// console.log(objectArray); //is returning undefined
