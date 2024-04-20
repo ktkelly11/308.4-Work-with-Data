@@ -187,3 +187,13 @@ console.log(objectArray);
 // added Bilbo to the end of the array, also being a Hobbit and writer isn't occupation enough? I disagree!
 
 // Calculate the average age of the group
+let averageAge = 0;
+for (i = 0; i < objectArray.length; i++) {
+  averageAge += parseInt(newArray[i].age);
+}
+averageAge = averageAge / objectArray.length;
+
+console.log(averageAge);
+
+console.log("=========================================");
+// Part 5
