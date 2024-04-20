@@ -137,6 +137,7 @@ for (i = 1; i < newArray.length; i++) {
     objectArray[i - 1][columnHeaders[h].toLowerCase()] = newArray[i][h];
   }
 }
+// Thanks Rodney for the help figuring this out!
 
 console.log(objectArray);
 
@@ -171,7 +172,7 @@ console.log(objectArray);
 // got rid of the 4th array (98, Bill, Doctor's Assistant, 26)
 
 // Insert the following object at index 1
-objectArray.unshift({
+objectArray.splice(1, 0, {
   id: "48",
   name: "Barry",
   occupation: "Runner",
@@ -181,3 +182,8 @@ console.log(objectArray);
 // added the information to the first index
 
 // Add the following object to the end of the array
+objectArray.push({ id: "7", name: "Bilbo", occupation: "None", age: "111" });
+console.log(objectArray);
+// added Bilbo to the end of the array, also being a Hobbit and writer isn't occupation enough? I disagree!
+
+// Calculate the average age of the group
