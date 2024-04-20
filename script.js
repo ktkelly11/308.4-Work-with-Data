@@ -169,3 +169,15 @@ console.log("=========================================");
 objectArray.pop(1);
 console.log(objectArray);
 // got rid of the 4th array (98, Bill, Doctor's Assistant, 26)
+
+// Insert the following object at index 1
+objectArray.unshift({
+  id: "48",
+  name: "Barry",
+  occupation: "Runner",
+  age: "25",
+});
+console.log(objectArray);
+// added the information to the first index
+
+// Add the following object to the end of the array
